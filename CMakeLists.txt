@@ -34,7 +34,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Emscripten")
             TARGET game  POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy
             ${CMAKE_CURRENT_BINARY_DIR}/game.html
-            ${PROJECT_SOURCE_DIR}/docs/game.html)
+            ${PROJECT_SOURCE_DIR}/docs/index.html)
     add_custom_command(
             TARGET game  POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy
