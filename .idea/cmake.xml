@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSharedSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Emscripten" ENABLED="true" GENERATION_DIR="wasm" CONFIG_NAME="MinSizeRel" GENERATION_OPTIONS="-G Ninja -DCMAKE_TOOLCHAIN_FILE=/lib/emscripten/cmake/Modules/Platform/Emscripten.cmake -DPLATFORM=Web" BUILD_OPTIONS="-- -j 9" />
+      <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="build" CONFIG_NAME="Debug" GENERATION_OPTIONS="-G Ninja" BUILD_OPTIONS="-- -j 9" />
+    </configurations>
+  </component>
+</project>
