@@ -45,6 +45,11 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Emscripten")
             COMMAND ${CMAKE_COMMAND} -E copy
             ${CMAKE_CURRENT_BINARY_DIR}/game.wasm
             ${PROJECT_SOURCE_DIR}/docs/game.wasm)
+    add_custom_command(
+            TARGET game  POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${PROJECT_SOURCE_DIR}/resources
+            ${PROJECT_SOURCE_DIR}/docs/resources)
 endif()
 
 add_custom_command(
