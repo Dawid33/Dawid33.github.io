@@ -30,6 +30,21 @@ add_executable(game
 if (${CMAKE_SYSTEM_NAME} MATCHES "Emscripten")
     target_link_options(game PUBLIC --shell-file ../index.html)
     set_target_properties(game PROPERTIES LINK_FLAGS "-s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY")
+    add_custom_command(
+            TARGET game  POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            ${CMAKE_CURRENT_BINARY_DIR}/game.html
+            ${PROJECT_SOURCE_DIR}/docs/game.html)
+    add_custom_command(
+            TARGET game  POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            ${CMAKE_CURRENT_BINARY_DIR}/game.js
+            ${PROJECT_SOURCE_DIR}/docs/game.js)
+    add_custom_command(
+            TARGET game  POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy
+            ${CMAKE_CURRENT_BINARY_DIR}/game.wasm
+            ${PROJECT_SOURCE_DIR}/docs/game.wasm)
 endif()
 
 target_link_libraries(game raylib m)

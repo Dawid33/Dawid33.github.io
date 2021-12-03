@@ -2,10 +2,7 @@
 
 #define MAX_COLUMNS 20
 
-int main(void)
-{
-    // Initialization
-    //--------------------------------------------------------------------------------------
+int main(void) {
     const int screenWidth = 800;
     const int screenHeight = 450;
 
