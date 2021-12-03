@@ -1,5 +1,4 @@
 #include "raylib.h"
-
 #define MAX_COLUMNS 20
 
 int main(void) {
