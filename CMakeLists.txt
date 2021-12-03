@@ -47,6 +47,12 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Emscripten")
             ${PROJECT_SOURCE_DIR}/docs/game.wasm)
 endif()
 
+add_custom_command(
+        TARGET game  POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${PROJECT_SOURCE_DIR}/resources
+        ${PROJECT_BINARY_DIR}/resources)
+
 target_link_libraries(game raylib m)
 target_compile_options(game PRIVATE -Wall -Wextra)
 target_include_directories(game PRIVATE ${raylib_SOURCE_DIRS}/include)
